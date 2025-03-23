@@ -12,7 +12,7 @@
 ### 1. Clone the Repository
 
 ```sh
-git clone https://github.com/yourusername/rust-be-template.git
+git clone https://github.com/patrikduch/rust-be-template.git
 cd rust-be-template
 ```
 
