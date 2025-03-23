@@ -1,0 +1,51 @@
+# Target directory
+/target/
+
+# Build artifacts
+**/*.rs.bk
+**/*.rmeta
+
+# Dependencies
+/Cargo.lock
+
+# Binaries
+/debug/
+/release/
+
+# Rust-specific files
+/.rustup/
+/.cargo/
+/*.rs.bk
+
+# IDE/Editor files
+.idea/
+/.vscode/
+/*.swp
+*.swo
+*.swn
+*~
+
+# Logs
+/logs/
+/*.log
+
+# Environment variables and secrets
+.env
+.env.*
+secrets.json
+
+# Profiling and debugging tools
+/flamegraph.svg
+/heaptrack.out
+/cargo-profiler/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+.DS_Store
+Thumbs.db
+
+# Rust test-specific files
+/tests/tmp/
+/tests/output/
