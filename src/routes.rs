@@ -1,10 +1,12 @@
 use actix_web::web;
-use crate::controllers::user_controller::UserController;
+use sqlx::Pool;
+use sqlx::Postgres;
+
+use crate::controllers::ip_controller;
 use crate::controllers::health_controller::HealthController;
-use crate::controllers::ip_controller; // Changed from "ip" to "ip_controller"
+use crate::controllers::user_controller::UserController;
 
 pub fn configure_routes(cfg: &mut web::ServiceConfig) {
-    // User routes
     cfg.service(
         web::scope("/api/users")
             .route("", web::get().to(UserController::get_all_users))
@@ -13,8 +15,7 @@ pub fn configure_routes(cfg: &mut web::ServiceConfig) {
             .route("/{id}", web::put().to(UserController::update_user))
             .route("/{id}", web::delete().to(UserController::delete_user))
     );
-    
-    // Health check route
+
     cfg.service(
         web::scope("/health")
             .route("", web::get().to(HealthController::health_check))

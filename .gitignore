@@ -31,7 +31,6 @@
 
 # Environment variables and secrets
 .env
-.env.*
 secrets.json
 
 # Profiling and debugging tools
