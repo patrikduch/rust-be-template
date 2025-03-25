@@ -54,3 +54,9 @@ docker tag rust-be-template:latest patrikduch/rust-be-template:latest
 docker push patrikduch/rust-be-template:latest
 
 
+Adding new user
+
+curl -X POST http://localhost/api/users \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Charlie", "email": "charlie@example.com"}'
+

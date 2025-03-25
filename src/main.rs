@@ -2,6 +2,7 @@ mod controllers;
 mod models;
 mod routes;
 mod db;
+mod services; 
 
 use log::info;
 use dotenv::dotenv;
