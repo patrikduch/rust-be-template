@@ -3,14 +3,10 @@ mod models;
 mod routes;
 mod db;
 mod services; 
-
 use log::info;
 use dotenv::dotenv;
 use actix_web::{App, HttpServer, web};
 use sqlx::{Pool, Postgres};
-
-#[cfg(test)]
-mod tests;
 
 
 #[actix_web::main]

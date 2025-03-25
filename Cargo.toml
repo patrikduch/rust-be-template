@@ -2,6 +2,15 @@
 name = "rust-be-template"
 version = "1.0.0"
 edition = "2021"
+authors = ["Patrik Duch <duchpatrik@icloud.com"]
+
+# Add lib configuration to expose your code as a library
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "rust-be-template"
+path = "src/main.rs"
 
 [dependencies]
 actix-web = "4.0"
@@ -18,3 +27,6 @@ tokio = { version = "1", features = ["full"] }
 # SQLx for PostgreSQL
 sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-native-tls"] }
 
+[dev-dependencies]
+# Add these for testing
+actix-rt = "2.8"
