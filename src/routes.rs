@@ -1,6 +1,4 @@
 use actix_web::web;
-use sqlx::Pool;
-use sqlx::Postgres;
 
 use crate::controllers::ip_controller;
 use crate::controllers::health_controller::HealthController;

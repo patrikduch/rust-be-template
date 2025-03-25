@@ -9,6 +9,10 @@ use dotenv::dotenv;
 use actix_web::{App, HttpServer, web};
 use sqlx::{Pool, Postgres};
 
+#[cfg(test)]
+mod tests;
+
+
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     dotenv().ok();
