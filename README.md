@@ -37,6 +37,14 @@ cargo run
 
 ### 4. Dockerization
 
+```sh
+docker-compose up -d
+```
+
+
+
+
+
 docker build -t rust-be-template .
 
 
@@ -54,9 +62,15 @@ docker tag rust-be-template:latest patrikduch/rust-be-template:latest
 docker push patrikduch/rust-be-template:latest
 
 
+cargo fix --allow-dirty --tests
+
+
 Adding new user
 
 curl -X POST http://localhost/api/users \
      -H "Content-Type: application/json" \
      -d '{"name": "Charlie", "email": "charlie@example.com"}'
+
+
+
 
