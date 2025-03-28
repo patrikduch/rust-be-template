@@ -23,7 +23,10 @@ jobs:
       - name: Cache build artifacts
         uses: Swatinem/rust-cache@v2
 
-      - name: Build (cargo check using .sqlx/sqlx-data.json)
+      - name: Install sqlx-cli
+        run: cargo install sqlx-cli --no-default-features --features postgres
+
+      - name: Check build (SQLx offline mode)
         run: cargo check --all
 
       - name: Verify SQLx data cache is up-to-date
