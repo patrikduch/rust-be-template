@@ -74,3 +74,4 @@ curl -X POST http://localhost/api/users \
 
 
 
+cargo sqlx prepare
