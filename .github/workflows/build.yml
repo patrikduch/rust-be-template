@@ -1,4 +1,4 @@
-name: Build Check
+name: CI Build Check (Offline SQLx)
 
 on:
   push:
@@ -8,18 +8,17 @@ on:
 
 jobs:
   build:
-    name: Verify Build
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Rust
-        uses: actions-rs/toolchain@v1
+      - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           override: true
 
-      - name: Build project (cargo check)
-        run: cargo check --all
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Run build with offline SQLx
+        run: cargo check --all --features offline
