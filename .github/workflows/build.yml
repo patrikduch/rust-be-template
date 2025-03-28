@@ -1,4 +1,4 @@
-name: Rust Build (SQLx Offline Mode)
+name: Rust CI (Build + Test + SQLx Offline)
 
 on:
   push:
@@ -26,8 +26,11 @@ jobs:
       - name: Install sqlx-cli
         run: cargo install sqlx-cli --no-default-features --features postgres
 
-      - name: Check build (SQLx offline mode)
+      - name: Build (cargo check)
         run: cargo check --all
 
-      - name: Verify SQLx data cache is up-to-date
+      - name: Verify SQLx data cache
         run: cargo sqlx prepare --check
+
+      - name: Run tests
+        run: cargo test --all --verbose
