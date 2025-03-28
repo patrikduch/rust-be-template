@@ -12,6 +12,10 @@ path = "src/lib.rs"
 name = "rust-be-template"
 path = "src/main.rs"
 
+[features]
+default = []
+offline = ["sqlx/offline"]
+
 [dependencies]
 actix-web = "4.0"
 serde = { version = "1.0", features = ["derive"] }
