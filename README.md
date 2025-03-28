@@ -5,6 +5,10 @@
 ## Features
 
 - **Actix-Web** for building RESTful APIs
+- **SQLx** for asynchronous PostgreSQL access
+- **CQRS** pattern with separated command and query handlers
+- **Docker + Docker Compose** for containerized development
+- **GitHub Actions CI** with offline SQLx query validation and test runner
 
 
 ## Getting Started
