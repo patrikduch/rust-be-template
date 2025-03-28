@@ -14,7 +14,6 @@ path = "src/main.rs"
 
 [features]
 default = []
-offline = ["sqlx/offline"]
 
 [dependencies]
 actix-web = "4.0"

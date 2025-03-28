@@ -1,24 +1,30 @@
-name: CI Build Check (Offline SQLx)
+name: Rust Build (SQLx Offline Mode)
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main, develop ]
+    branches: [main, develop]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout source code
+        uses: actions/checkout@v4
 
-      - uses: actions-rs/toolchain@v1
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           override: true
 
-      - uses: Swatinem/rust-cache@v2
+      - name: Cache build artifacts
+        uses: Swatinem/rust-cache@v2
 
-      - name: Run build with offline SQLx
-        run: cargo check --all --features offline
+      - name: Build (cargo check using .sqlx/sqlx-data.json)
+        run: cargo check --all
+
+      - name: Verify SQLx data cache is up-to-date
+        run: cargo sqlx prepare --check
