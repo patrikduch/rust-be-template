@@ -25,7 +25,7 @@ env_logger = "0.10"
 tokio = { version = "1", features = ["full"] }
 
 # SQLx for PostgreSQL
-sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-native-tls"] }
+sqlx = { version = "0.7", features = ["postgres", "runtime-tokio-native-tls", "macros"] }
 
 [dev-dependencies]
 # Add these for testing
