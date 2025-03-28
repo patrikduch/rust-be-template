@@ -1,4 +1,4 @@
-name: Rust CI (Build + Test + SQLx Offline)
+name: CI
 
 on:
   push:
