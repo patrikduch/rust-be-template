@@ -4,6 +4,7 @@
 
 ## Features
 
+
 - **Actix-Web** for building RESTful APIs
 - **SQLx** for asynchronous PostgreSQL access
 - **CQRS** pattern with separated command and query handlers
@@ -45,7 +46,15 @@ cargo run
 docker-compose up -d
 ```
 
+### 5.📌 Example Usage – User API
 
+#### ➕ Create a New User
+
+```sh
+curl -X POST http://localhost/api/users \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Charlie", "email": "charlie@example.com"}'
+```
 
 
 
@@ -69,11 +78,6 @@ docker push patrikduch/rust-be-template:latest
 cargo fix --allow-dirty --tests
 
 
-Adding new user
-
-curl -X POST http://localhost/api/users \
-     -H "Content-Type: application/json" \
-     -d '{"name": "Charlie", "email": "charlie@example.com"}'
 
 
 
