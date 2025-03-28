@@ -57,6 +57,26 @@ curl -X POST http://localhost/api/users \
 ```
 
 
+#### 📥 Get All Users
+
+```sh
+curl http://localhost/api/users
+```
+
+#### 📄 Get User by ID
+
+```sh
+curl http://localhost/api/users/1
+```
+
+#### 🔄 Update a User
+
+```sh
+curl -X PUT http://localhost/api/users/1 \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Updated Charlie", "email": "new-charlie@example.com"}'
+```
+
 
 docker build -t rust-be-template .
 
