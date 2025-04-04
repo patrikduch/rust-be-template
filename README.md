@@ -77,6 +77,7 @@ curl -X PUT http://localhost/api/users/1 \
      -d '{"name": "Updated Charlie", "email": "new-charlie@example.com"}'
 ```
 
+docker build --no-cache --progress=plain .
 
 docker build -t rust-be-template .
 

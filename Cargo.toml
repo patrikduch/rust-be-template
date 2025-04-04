@@ -23,6 +23,7 @@ lazy_static = "1.4"
 futures = "0.3"
 log = "0.4"
 env_logger = "0.10"
+openssl = { version = "0.10", features = ["vendored"] }
 
 # Async runtime
 tokio = { version = "1", features = ["full"] }
